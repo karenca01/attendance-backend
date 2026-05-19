@@ -14,7 +14,19 @@ const getUsers = async () => {
     });
 };
 
+const updateUserImage = async (userId, imageUrl) => {
+    return await prisma.user.update({
+        where: {
+            id: userId,
+        },
+        data: {
+            imageUrl,
+        },
+    });
+};
+
 module.exports = {
     createUser,
     getUsers,
+    updateUserImage,
 };

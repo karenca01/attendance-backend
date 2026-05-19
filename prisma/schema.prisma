@@ -12,6 +12,7 @@ model User {
   name      String
   email     String?  @unique
   faceId    String?  @unique
+  imageUrl  String?
   createdAt DateTime @default(now())
 
   attendances Attendance[]

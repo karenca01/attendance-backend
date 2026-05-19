@@ -39,20 +39,24 @@ const uploadFace = async (req, res) => {
 
         if (!req.file) {
             return res.status(400).json({
-                message: "Sin imagen",
+                message: "No se ha subido ninguna imagen",
             });
         }
 
+        const updatedUser = await userService.updateUserImage(
+            id,
+            req.file.filename
+        );
+
         res.json({
-            message: "Imagen guardada exitosamente",
-            userId: id,
-            file: req.file.filename,
+            message: "Imagen subida exitosamente",
+            user: updatedUser,
         });
     } catch (error) {
         console.error(error);
 
         res.status(500).json({
-            message: "Error al guardar la imagen",
+            message: "Error al subir la imagen",
         });
     }
 };
