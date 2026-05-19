@@ -14,7 +14,7 @@ const createUser = async (req, res) => {
         console.error(error);
 
         res.status(500).json({
-            message: "Error creating user",
+            message: "Error al crear el usuario",
         });
     }
 };
@@ -28,7 +28,31 @@ const getUsers = async (req, res) => {
         console.error(error);
 
         res.status(500).json({
-            message: "Error fetching users",
+            message: "Error al obtener los usuarios",
+        });
+    }
+};
+
+const uploadFace = async (req, res) => {
+    try {
+        const { id } = req.params;
+
+        if (!req.file) {
+            return res.status(400).json({
+                message: "Sin imagen",
+            });
+        }
+
+        res.json({
+            message: "Imagen guardada exitosamente",
+            userId: id,
+            file: req.file.filename,
+        });
+    } catch (error) {
+        console.error(error);
+
+        res.status(500).json({
+            message: "Error al guardar la imagen",
         });
     }
 };
@@ -36,4 +60,5 @@ const getUsers = async (req, res) => {
 module.exports = {
     createUser,
     getUsers,
+    uploadFace,
 };
