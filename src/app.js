@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const attendanceRoutes = require("./routes/attendance.routes");
+const errorMiddleware = require("./middlewares/error.middleware");
 
 const userRoutes = require("./routes/user.routes");
 
@@ -18,5 +19,7 @@ app.get("/health", (req, res) => {
 
 app.use("/users", userRoutes);
 app.use("/attendance", attendanceRoutes);
+
+app.use(errorMiddleware);
 
 module.exports = app;

@@ -16,4 +16,9 @@ router.get(
     attendanceController.getAttendanceHistory
 );
 
+router.post(
+    "/recognize",
+    attendanceController.recognizeAttendance
+);
+
 module.exports = router;

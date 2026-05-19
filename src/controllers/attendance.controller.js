@@ -1,7 +1,8 @@
 const attendanceService = require("../services/attendance.service");
 const prisma = require("../prisma/client");
+const faceService = require("../services/face.service");
 
-const registerAttendance = async (req, res) => {
+const registerAttendance = async (req, res, next) => {
     try {
         const { userId } = req.body;
 
@@ -25,15 +26,11 @@ const registerAttendance = async (req, res) => {
             attendance,
         });
     } catch (error) {
-        console.error(error);
-
-        res.status(500).json({
-            message: "Error al registrar la asistencia",
-        });
+        next(error);
     }
 };
 
-const getAttendanceHistory = async (req, res) => {
+const getAttendanceHistory = async (req, res, next) => {
     try {
         const { userId } = req.params;
 
@@ -42,15 +39,40 @@ const getAttendanceHistory = async (req, res) => {
 
         res.json(history);
     } catch (error) {
-        console.error(error);
+        next(error);
+    }
+};
 
-        res.status(500).json({
-            message: "Error al obtener el historial de asistencia",
+const recognizeAttendance = async (req, res, next) => {
+    try {
+        // llega la imagen y se manda a rekognition
+
+        const recognizedUser =
+            await faceService.recognizeFace();
+
+        if (!recognizedUser) {
+            return res.status(404).json({
+                message: "Rostro no reconocido",
+            });
+        }
+
+        const attendance =
+            await attendanceService.createAttendance(
+                recognizedUser.id
+            );
+
+        res.status(201).json({
+            message: "Asistencia registrada",
+            user: recognizedUser,
+            attendance,
         });
+    } catch (error) {
+        next(error);
     }
 };
 
 module.exports = {
     registerAttendance,
     getAttendanceHistory,
+    recognizeAttendance,
 };

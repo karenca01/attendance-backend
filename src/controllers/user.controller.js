@@ -1,6 +1,6 @@
 const userService = require("../services/user.service");
 
-const createUser = async (req, res) => {
+const createUser = async (req, res, next) => {
     try {
         const { name, email } = req.body;
 
@@ -11,29 +11,21 @@ const createUser = async (req, res) => {
 
         res.status(201).json(user);
     } catch (error) {
-        console.error(error);
-
-        res.status(500).json({
-            message: "Error al crear el usuario",
-        });
+        next(error);
     }
 };
 
-const getUsers = async (req, res) => {
+const getUsers = async (req, res, next) => {
     try {
         const users = await userService.getUsers();
 
         res.json(users);
     } catch (error) {
-        console.error(error);
-
-        res.status(500).json({
-            message: "Error al obtener los usuarios",
-        });
+        next(error);
     }
 };
 
-const uploadFace = async (req, res) => {
+const uploadFace = async (req, res, next) => {
     try {
         const { id } = req.params;
 
@@ -53,11 +45,7 @@ const uploadFace = async (req, res) => {
             user: updatedUser,
         });
     } catch (error) {
-        console.error(error);
-
-        res.status(500).json({
-            message: "Error al subir la imagen",
-        });
+        next(error);
     }
 };
 
