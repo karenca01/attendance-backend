@@ -45,24 +45,28 @@ const getAttendanceHistory = async (req, res, next) => {
 
 const recognizeAttendance = async (req, res, next) => {
     try {
-        // llega la imagen y se manda a rekognition
-
-        const recognizedUser =
-            await faceService.recognizeFace();
-
-        if (!recognizedUser) {
-            return res.status(404).json({
-                message: "Rostro no reconocido",
+        // 1. CAMBIO: Validamos que realmente esté llegando la foto de la cámara
+        if (!req.file) {
+            return res.status(400).json({
+                message: "No se ha proporcionado ninguna imagen para verificar la asistencia",
             });
         }
 
-        const attendance =
-            await attendanceService.createAttendance(
-                recognizedUser.id
-            );
+        // 2. CAMBIO: Le pasamos la URL de la foto recién subida a Azure al servicio de reconocimiento
+        const recognizedUser = await faceService.recognizeFace(req.file.path);
+
+        if (!recognizedUser) {
+            return res.status(404).json({
+                message: "Rostro no reconocido. No coincide con ningún alumno.",
+            });
+        }
+
+        const attendance = await attendanceService.createAttendance(
+            recognizedUser.id
+        );
 
         res.status(201).json({
-            message: "Asistencia registrada",
+            message: "Asistencia registrada exitosamente",
             user: recognizedUser,
             attendance,
         });

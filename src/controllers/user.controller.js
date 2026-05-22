@@ -35,13 +35,14 @@ const uploadFace = async (req, res, next) => {
             });
         }
 
+        // CAMBIO: Guardamos la URL completa de Azure (req.file.path) en lugar de solo el nombre
         const updatedUser = await userService.updateUserImage(
             id,
-            req.file.filename
+            req.file.path 
         );
 
         res.json({
-            message: "Imagen subida exitosamente",
+            message: "Imagen subida exitosamente desde Azure Storage",
             user: updatedUser,
         });
     } catch (error) {
