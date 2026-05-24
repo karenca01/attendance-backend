@@ -1,5 +1,5 @@
 const { RekognitionClient, CompareFacesCommand } = require("@aws-sdk/client-rekognition");
-const prisma = require("../prisma/client");
+const userService = require("./user.service");
 
 const rekognition = new RekognitionClient({
     region: process.env.AWS_REGION,
@@ -24,10 +24,8 @@ const recognizeFace = async (uploadedImageUrl) => {
         console.log("Preparando foto nueva...");
         const sourceImageBytes = await fetchImageBytes(uploadedImageUrl);
 
-        // Buscamos en PostgreSQL únicamente a los alumnos que ya tengan una foto vinculada
-        const users = await prisma.user.findMany({
-            where: { imageUrl: { not: null } }
-        });
+        // Buscamos únicamente a los alumnos que ya tengan una foto vinculada
+        const users = (await userService.getUsers()).filter((user) => user.imageUrl);
 
         console.log(`Comparando rostro con ${users.length} alumnos registrados...`);
 

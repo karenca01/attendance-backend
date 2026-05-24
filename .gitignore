@@ -8,3 +8,15 @@ uploads
 generated
 .prisma
 
+# Frontend (Vite/React)
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.env
+frontend/.env.local
+frontend/.vite/
+frontend/.cache/
+frontend/.DS_Store
+frontend/.idea/
+frontend/.vscode/
+

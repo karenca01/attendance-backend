@@ -1,0 +1,122 @@
+{
+  "users": [
+    {
+      "id": "e1b1ea4e-6ed6-438d-886d-59723c72ec6c",
+      "name": "Ciro Resendiz",
+      "email": "mresendiz99@alumnos.uaq.mx",
+      "faceId": null,
+      "imageUrl": "https://stattendancefotos.blob.core.windows.net/fotos/1779665826331.jpeg",
+      "createdAt": "2026-05-24T23:36:14.160Z"
+    },
+    {
+      "id": "57081451-759f-44be-bc24-1da121b2b1d3",
+      "name": "Melisa Resendiz",
+      "email": null,
+      "faceId": null,
+      "imageUrl": "https://stattendancefotos.blob.core.windows.net/fotos/1779664696061.jpeg",
+      "createdAt": "2026-05-24T23:16:01.476Z"
+    },
+    {
+      "id": "e111df47-15d2-4eb4-b4e5-c29c26f0a325",
+      "name": "Yolanda Resendiz",
+      "email": null,
+      "faceId": null,
+      "imageUrl": "https://stattendancefotos.blob.core.windows.net/fotos/1779664710905.jpeg",
+      "createdAt": "2026-05-24T23:15:56.086Z"
+    },
+    {
+      "id": "f858c4e5-cb13-4c88-9e29-0c28385ee04c",
+      "name": "Monica Resendiz",
+      "email": null,
+      "faceId": null,
+      "imageUrl": "https://stattendancefotos.blob.core.windows.net/fotos/1779664723066.jpeg",
+      "createdAt": "2026-05-24T23:15:51.618Z"
+    },
+    {
+      "id": "310a7ac6-2f21-4e2b-9e3e-eea2bfa6a0af",
+      "name": "Victor Resendiz",
+      "email": null,
+      "faceId": null,
+      "imageUrl": "https://stattendancefotos.blob.core.windows.net/fotos/1779664732402.jpeg",
+      "createdAt": "2026-05-24T23:15:47.712Z"
+    },
+    {
+      "id": "6ff70f20-8f10-45b1-afeb-0d162cd5492d",
+      "name": "Irma Reséndiz",
+      "email": null,
+      "faceId": null,
+      "imageUrl": "https://stattendancefotos.blob.core.windows.net/fotos/1779664745379.jpeg",
+      "createdAt": "2026-05-24T23:15:35.053Z"
+    },
+    {
+      "id": "22ec4d02-bcdc-4d76-aa21-7b2bbf690589",
+      "name": "Maria Reséndiz",
+      "email": null,
+      "faceId": null,
+      "imageUrl": "https://stattendancefotos.blob.core.windows.net/fotos/1779657048942.jpeg",
+      "createdAt": "2026-05-24T21:08:04.309Z"
+    }
+  ],
+  "attendances": [
+    {
+      "id": "783d05fe-1316-452b-b37f-6a8129941648",
+      "userId": "e1b1ea4e-6ed6-438d-886d-59723c72ec6c",
+      "timestamp": "2026-05-24T23:37:25.449Z",
+      "status": "PRESENTE"
+    },
+    {
+      "id": "2e140865-dda5-45a7-babe-fbf911a6850d",
+      "userId": "22ec4d02-bcdc-4d76-aa21-7b2bbf690589",
+      "timestamp": "2026-05-24T23:30:09.156Z",
+      "status": "PRESENTE"
+    },
+    {
+      "id": "b3c838a0-7a01-47b6-9a50-2e3f6784ce8d",
+      "userId": "22ec4d02-bcdc-4d76-aa21-7b2bbf690589",
+      "timestamp": "2026-05-24T23:29:51.897Z",
+      "status": "PRESENTE"
+    },
+    {
+      "id": "277e88dd-9a79-4738-8bfe-2e24c7d72dca",
+      "userId": "22ec4d02-bcdc-4d76-aa21-7b2bbf690589",
+      "timestamp": "2026-05-24T23:21:46.806Z",
+      "status": "PRESENTE"
+    },
+    {
+      "id": "56fd69db-5e9a-4e0f-ba2a-64dcbc740203",
+      "userId": "6ff70f20-8f10-45b1-afeb-0d162cd5492d",
+      "timestamp": "2026-05-24T23:20:37.752Z",
+      "status": "PRESENTE"
+    },
+    {
+      "id": "945f7679-d220-4a43-bf43-c365f39ee9a4",
+      "userId": "22ec4d02-bcdc-4d76-aa21-7b2bbf690589",
+      "timestamp": "2026-05-24T23:20:17.883Z",
+      "status": "PRESENTE"
+    },
+    {
+      "id": "5513d683-c5a8-417f-aa3b-ecb85d32e6a8",
+      "userId": "22ec4d02-bcdc-4d76-aa21-7b2bbf690589",
+      "timestamp": "2026-05-24T23:20:01.280Z",
+      "status": "PRESENTE"
+    },
+    {
+      "id": "b2e792c6-74e3-409b-8e1f-05a857a0c28d",
+      "userId": "22ec4d02-bcdc-4d76-aa21-7b2bbf690589",
+      "timestamp": "2026-05-24T23:19:46.363Z",
+      "status": "PRESENTE"
+    },
+    {
+      "id": "cccddbea-cd35-4691-8aa3-e4ef99a9a5cd",
+      "userId": "22ec4d02-bcdc-4d76-aa21-7b2bbf690589",
+      "timestamp": "2026-05-24T21:29:28.980Z",
+      "status": "PRESENTE"
+    },
+    {
+      "id": "c2f653df-c2be-423f-a9a6-8dfdec392ae1",
+      "userId": "22ec4d02-bcdc-4d76-aa21-7b2bbf690589",
+      "timestamp": "2026-05-24T21:11:09.764Z",
+      "status": "PRESENTE"
+    }
+  ]
+}

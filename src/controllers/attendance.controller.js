@@ -1,13 +1,11 @@
 const attendanceService = require("../services/attendance.service");
-const prisma = require("../prisma/client");
 const faceService = require("../services/face.service");
+const userService = require("../services/user.service");
 
 const registerAttendance = async (req, res, next) => {
     try {
         const { userId } = req.body;
-        const user = await prisma.user.findUnique({
-            where: { id: userId },
-        });
+        const user = await userService.getUserById(userId);
 
         if (!user) {
             return res.status(404).json({ message: "Usuario no encontrado" });

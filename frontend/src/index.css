@@ -1,0 +1,57 @@
+:root {
+  --bg: #071018; /* página */
+  --surface: #0b1016; /* tarjetas / inputs */
+    --muted: rgba(226,232,240,0.6);
+    --muted-2: rgba(226,232,240,0.48);
+    --text: #e6eef8;
+  --accent: #7dd3fc; /* azul claro */
+  --accent-2: #fbbf24; /* amarillo de acento sutil */
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    line-height: 1.5;
+    font-weight: 400;
+    color: var(--text);
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+#root {
+    min-height: 100vh;
+}
